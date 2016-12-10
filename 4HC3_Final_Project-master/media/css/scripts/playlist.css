@@ -1,0 +1,24 @@
+.main-container {
+    width:100%;
+	display:flex;
+}
+
+.playlist-header {
+	border:10px solid #ff0000;
+	background-color: #ffffff;
+}
+td.playlist-table{
+
+}
+
+video.media-player {
+    width: 100%;
+}
+
+h3.playlist-title {
+    display:inline;
+}
+
+span.button-group {
+    float:right;
+}

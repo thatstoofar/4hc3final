@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Group 7 4HC3 Media Player</title>
+<script src="media/js/jquery.js"></script>
+<script src="media/js/bootstrap.min.js"></script>
+<script src="media/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" type="text/css" href="media/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="media/css/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="media/css/scripts/media-player.css">
+<link rel="stylesheet" type="text/css" href="media/css/scripts/playlist.css">
+<script src="media/js/scripts/playlist.js"></script>
+<script src="media/js/scripts/media-player.js"></script>
+</head>
+
+<body>
+    <div class="main-container">
+        <table>
+            <tr>
+                <td width="35%" class="playlist-table">
+                    <div>
+                    <h3 class="playlist-title">Music titles</h3> 
+                    <span class='button-group'>
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </span>
+                    </div>
+                    <table id="music-playlist-table" class="table music-playlist">
+                        <thead>
+                        <tr>
+                        <td>Track</td>
+                        <td>Album</td>
+                        <td>Duration</td>
+						<td>Filename</td>
+                        </tr>
+                        </thead>
+                    </table>
+                </td>
+                <td width="65%" rowspan="2" class="reverse">
+					<div class="player-container">
+						<div class="media-title"><p id="media-title">*** Bunny with Butterfly ***</p></div>
+						<!-- place holder for music image -->
+						<div class="media-waveform" id="media-playing"></div>
+						<div id="video-playing">
+							<video id="media-video" class="media-player" controls>
+								<source src="media/video/mov_bbb.mp4" type="video/mp4">
+								Your browser does not support HTML5 video.
+							</video>
+						</div>
+					   <div class="media-controls">
+							<button id="reverse-button" title="reverse" onclick='rewind(1.5)'><img src='media/images/rev24.png'></button>
+							<button id="play-pause-button" class="play" title="play" onclick="togglePlayPause();"><img id="playpause" src='media/images/play24.png'></button>
+							<button id="stop-button" class="stop" title="stop" onclick="stopPlayer();"><img src='media/images/stop24.png'></button>
+							<button id="cue-button" title="cue" value="FF" onclick='slowmotion(0.2)'><img src='media/images/ff24.png'></button>
+							<progress id="progress-bar" min="0" max="100" value="0">0% played</progress>
+							<button id="volume-inc-button" class="volume-plus" title="increase volume" onclick='changeVolume("+");'><img src='media/images/plus24.png'></button>
+							<button id="volume-dec-button" class="volume-minus" title="decrease volume" onclick='changeVolume("-");'><img src='media/images/minus24.png'></button>
+							<button id="replay-button" class="replay" title="replay" onclick="replayMedia();"><img src='media/images/replay24.png'></button>	
+							<button id="mute-button" class="mute" title="mute" onclick='toggleMute("true");'><img id="muteunmute" src='media/images/mute24.png'></button>
+						</div>
+					</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="playlist-table">
+                    <div>
+                        <h3 class="playlist-title">Video titles</h3> 
+                        <span class='button-group'>
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </span>
+                    </div>
+                    <table id="video-playlist-table" class="table video-playlist">
+                        <thead>
+                        <tr>
+                        <td>Name</td>
+                        <td>Duration</td>
+						<td>Filename</td>
+                        </tr>
+                        </thead>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
+
